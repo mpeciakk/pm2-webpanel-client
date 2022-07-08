@@ -1,19 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import Collapsible from '../components/Collapsible'
+import Host from '../components/Host'
 
 const Home: NextPage = () => {
     return (
-        <div className="flex min-h-screen">
+        <div className="w-full h-full">
             <Head>
                 <title>pm2 webpanel</title>
             </Head>
 
-            <main className="w-full">
-                <Collapsible>test</Collapsible>
-                <Collapsible>test</Collapsible>
-                <Collapsible>test</Collapsible>
+            <main className="w-full h-full flex justify-center items-center">
+                <div className="w-2/3">
+                    <Host name="s1"></Host>
+                </div>
             </main>
         </div>
     )
