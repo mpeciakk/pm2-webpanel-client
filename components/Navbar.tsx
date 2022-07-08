@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (
-        <nav className="border-gray-200 px-2 py-2.5 bg-gray-800">
+        <nav className="border-gray-200 px-2 py-2.5 bg-gray-700">
             <div className="container flex justify-between items-center mx-auto">
                 <span className="text-xl font-semibold text-white">PM2</span>
 
