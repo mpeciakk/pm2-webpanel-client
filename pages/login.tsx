@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
 import { useRef } from 'react'
+import Router from 'next/router'
+import cookieCutter from 'cookie-cutter'
 
-const Login: NextPage = () => {
+const Login = () => {
     const usernameRef = useRef<HTMLInputElement>()
     const passwordRef = useRef<HTMLInputElement>()
 
@@ -19,18 +19,16 @@ const Login: NextPage = () => {
                 password: passwordRef.current.value,
             }),
         })
-            .then((r) => r.json())
+            .then((res) => res.json())
             .then((data) => {
-                localStorage.setItem('access_token', data.access_token)
+                cookieCutter.set('access_token', data.access_token)
+
+                Router.push('/')
             })
     }
 
     return (
         <div className="w-full h-full">
-            <Head>
-                <title>pm2 webpanel</title>
-            </Head>
-
             <main className="w-full h-full flex justify-center items-center">
                 <form className="bg-white shadow-md rounded p-8 py-12">
                     <div className="mb-6 font-bold text-3xl text-gray-700 w-full text-center">PM2 Webpanel</div>
